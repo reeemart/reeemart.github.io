@@ -1,0 +1,112 @@
+<p>
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()" aria-label="Example icon-button with menu icon" >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Human Resource Information System</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div class="header-container">
+            <div mat-card-avatar class="example-header-image"></div>
+            <div class="header-content">
+              <mat-card-title>ADMIN</mat-card-title>
+              <mat-card-subtitle>REEMART</mat-card-subtitle>
+            </div>
+          </div>
+        </mat-card-header>
+      </mat-card>
+      <button class="example-label" mat-button >DASHBOARD</button>
+      <mat-expansion-panel class = "expansionPanel" (click)="handleClick()" #panel1 [expanded]="expandedPanel === 'panel1'">
+        <mat-expansion-panel-header (click)="panelClick('panel1')">
+          <mat-panel-title>
+            EMPLOYEES
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button class="expansionPanelButton" mat-button routerLink="/addEmployee">ADD EMPLOYEE</button>
+        <button class="expansionPanelButton" mat-button routerLink="/employeeList">EMPLOYEE LIST</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel class = "expansionPanel" (click)="handleClick()" #panel2 [expanded]="expandedPanel === 'panel2'">
+        <mat-expansion-panel-header (click)="panelClick('panel2')">
+          <mat-panel-title>
+            REQUEST
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button class="expansionPanelButton" mat-button routerLink="/leave">LEAVE</button>
+        <button class="expansionPanelButton" mat-button routerLink="/overtime">OVERTIME</button>
+        <button class="expansionPanelButton" mat-button routerLink="/changeShift">CHANGE SHIFT</button>
+        <button class="expansionPanelButton" mat-button routerLink="/timeCorrection">TIME CORRECTION</button>
+        <button class="expansionPanelButton" mat-button routerLink="/requestList">REQUEST LIST</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel class = "expansionPanel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            REPORTS
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action" routerLink="/leave"><a>LEAVE REPORT</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/overtime"><a>OVERTIME REPORT</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/changeShift"><a>CHANGE SHIFT REPORT</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>TIME CORRECTION REPORT</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>LEAVE CREDIT AND USAGE REPORT</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>APPROVAL ROUTE REPORT</a></li>
+        </ul>
+      </mat-expansion-panel>
+      <mat-expansion-panel class = "expansionPanel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            LEAVE CREDITS
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action" routerLink="/leave"><a>LEAVE</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/overtime"><a>OVERTIME</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/changeShift"><a>CHANGE SHIFT</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>TIME CORRECTION</a></li>
+        </ul>
+      </mat-expansion-panel>
+      <mat-expansion-panel class = "expansionPanel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            APPROVAL ROUTE
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action" routerLink="/leave"><a>LEAVE</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/overtime"><a>OVERTIME</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/changeShift"><a>CHANGE SHIFT</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>TIME CORRECTION</a></li>
+        </ul>
+      </mat-expansion-panel>
+      <mat-expansion-panel class = "expansionPanel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            SYSTEM CONFIGURATION
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action" routerLink="/companyList"><a>COMPANY LIST</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/costcenter"><a>COSTCENTER</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/leaveCodeList"><a>LEAVE CODE LIST</a></li>
+          <li class="list-group-item list-group-item-action" routerLink="/shiftCodeList"><a>SHIFT CODE LIST</a></li>
+        </ul>
+      </mat-expansion-panel>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+  </mat-drawer-container>
+</p>
