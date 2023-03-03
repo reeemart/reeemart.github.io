@@ -47,49 +47,24 @@
         <button class="expansionPanelButton" mat-button routerLink="/timeCorrection">TIME CORRECTION</button>
         <button class="expansionPanelButton" mat-button routerLink="/requestList">REQUEST LIST</button>
       </mat-expansion-panel>
-      <mat-expansion-panel class = "expansionPanel">
-        <mat-expansion-panel-header>
+      <mat-expansion-panel class = "expansionPanel" (click)="handleClick()" #panel2 [expanded]="expandedPanel === 'panel3'">
+        <mat-expansion-panel-header (click)="panelClick('panel3')">
           <mat-panel-title>
             REPORTS
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item list-group-item-action" routerLink="/leave"><a>LEAVE REPORT</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/overtime"><a>OVERTIME REPORT</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/changeShift"><a>CHANGE SHIFT REPORT</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>TIME CORRECTION REPORT</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>LEAVE CREDIT AND USAGE REPORT</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>APPROVAL ROUTE REPORT</a></li>
-        </ul>
+        <button class="expansionPanelButton" mat-button routerLink="/leaveReport">LEAVE REPORT</button>
+        <button class="expansionPanelButton" mat-button routerLink="/overtimReporte">OVERTIME REPORT</button>
+        <button class="expansionPanelButton" mat-button routerLink="/changeShiftReport">CHANGE SHIFT REPORT</button>
+        <button class="expansionPanelButton" mat-button routerLink="/timeCorrectionReport">TIME CORRECTION REPORT</button>
+        <button class="expansionPanelButton" mat-button routerLink="/leaveCreditAndUsageReport">LEAVE CREDIT AND USAGE REPORT</button>
+        <button class="expansionPanelButton" mat-button routerLink="/approvalRouteReport">APPROVAL ROUTE REPORT</button>
       </mat-expansion-panel>
-      <mat-expansion-panel class = "expansionPanel">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            LEAVE CREDITS
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item list-group-item-action" routerLink="/leave"><a>LEAVE</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/overtime"><a>OVERTIME</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/changeShift"><a>CHANGE SHIFT</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>TIME CORRECTION</a></li>
-        </ul>
-      </mat-expansion-panel>
-      <mat-expansion-panel class = "expansionPanel">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            APPROVAL ROUTE
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item list-group-item-action" routerLink="/leave"><a>LEAVE</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/overtime"><a>OVERTIME</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/changeShift"><a>CHANGE SHIFT</a></li>
-          <li class="list-group-item list-group-item-action" routerLink="/timeCorrection"><a>TIME CORRECTION</a></li>
-        </ul>
-      </mat-expansion-panel>
-      <mat-expansion-panel class = "expansionPanel">
-        <mat-expansion-panel-header>
+      <button class="example-label" mat-button >TIME REGISTER</button>
+      <button class="example-label" mat-button >LEAVE CREDITS</button>
+      <button class="example-label" mat-button >APPROVAL ROUTE</button>
+      <mat-expansion-panel class = "expansionPanel" (click)="handleClick()" #panel2 [expanded]="expandedPanel === 'panel4'">
+        <mat-expansion-panel-header (click)="panelClick('panel4')">
           <mat-panel-title>
             SYSTEM CONFIGURATION
           </mat-panel-title>

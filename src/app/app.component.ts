@@ -7,7 +7,7 @@ import { MatExpansionPanel } from '@angular/material/expansion';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'HRIS-APP';
+  title = 'HRIS';
   showFiller = false;
   handleClick(){
     console.log('Panel Clicked!');
